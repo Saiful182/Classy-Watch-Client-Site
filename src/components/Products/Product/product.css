@@ -1,0 +1,10 @@
+.singleproduct{
+    margin-top:50px;
+}
+.singleproduct-img{
+   text-align: center;
+}
+.singleproduct-img img{
+width: 98%;
+height: 500px;
+}

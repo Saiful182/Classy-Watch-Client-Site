@@ -35,7 +35,7 @@ const Header = () => {
                         <Nav>
                             <NavDropdown title="DashBoard" id="basic-nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/pay">Pay</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to="/myorders">My Orders action</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/userorders">My Orders</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/review">Review</NavDropdown.Item>
 
                             </NavDropdown>

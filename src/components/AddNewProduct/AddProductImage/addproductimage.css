@@ -1,0 +1,12 @@
+.image-container img{
+    width: 80%;
+    height: 850px;
+    margin-left:40px ;
+   
+}
+.image-container {
+    align-items: center;
+    justify-content: center;
+    margin: 0px autos;
+    justify-items: center;
+}

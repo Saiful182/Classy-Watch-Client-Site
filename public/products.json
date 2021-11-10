@@ -6,7 +6,7 @@
         "catagory": "Men",
         "brand": "Rolex",
         "warranty": "24 months",
-        "review": 3,
+        "ratting": 3,
         "img": "https://i.postimg.cc/Tw5vzQfN/01.jpg"
     },
     {
@@ -16,7 +16,7 @@
         "catagory": "Men",
         "brand": "Blancpain",
         "warranty": "24 months",
-        "review": 4,
+        "ratting": 4,
         "img": "https://i.postimg.cc/B6mPzSZB/02.jpg"
     },
     {
@@ -26,7 +26,7 @@
         "catagory": "Men",
         "brand": "Rolex",
         "warranty": "24 months",
-        "review": 5,
+        "ratting": 5,
         "img": "https://i.postimg.cc/wBdNy4bL/03.jpg"
     },
     {
@@ -36,7 +36,7 @@
         "catagory": "Men",
         "brand": "Blancpain",
         "warranty": "24 months",
-        "review": 4,
+        "ratting": 4,
         "img": "https://i.postimg.cc/qRJCQhr7/04.jpg"
     },
     {
@@ -46,7 +46,7 @@
         "catagory": "Men",
         "brand": "Rolex",
         "warranty": "24 months",
-        "review": 5,
+        "ratting": 5,
         "img": "https://i.postimg.cc/BvcKx5dy/05.jpg"
     },
     {
@@ -56,7 +56,7 @@
         "catagory": "Men",
         "brand": "Blancpain",
         "warranty": "24 months",
-        "review": 3,
+        "ratting": 3,
         "img": "https://i.postimg.cc/7PcfJQ5h/06.jpg"
     },
     {
@@ -66,7 +66,7 @@
         "catagory": "Men",
         "brand": "Casio",
         "warranty": "24 months",
-        "review": 2,
+        "ratting": 2,
         "img": "https://i.postimg.cc/fbwLQGr2/07.jpg"
     },
     {
@@ -76,7 +76,7 @@
         "catagory": "Men",
         "brand": "Jaeger-LeCoultre",
         "warranty": "24 months",
-        "review": 4,
+        "ratting": 4,
         "img": "https://i.postimg.cc/PrwNWzD4/08.jpg"
     },
     {
@@ -86,7 +86,7 @@
         "catagory": "Men",
         "brand": "Casio",
         "warranty": "24 months",
-        "review": 5,
+        "ratting": 5,
         "img": "https://i.postimg.cc/J0B7QMsn/09.jpg"
     },
     {
@@ -96,7 +96,7 @@
         "catagory": "Men",
         "brand": "Adidas",
         "warranty": "24 months",
-        "review": 2,
+        "ratting": 2,
         "img": "https://i.postimg.cc/SQXcP98X/10.jpg"
     },
     {
@@ -106,7 +106,7 @@
         "catagory": "Women",
         "brand": "Casio",
         "warranty": "24 months",
-        "review": 5,
+        "ratting": 5,
         "img": "https://i.postimg.cc/4xRyB7bT/11.jpg"
     },
     {
@@ -116,7 +116,7 @@
         "catagory": "Women",
         "brand": "Jaeger-LeCoultre",
         "warranty": "24 months",
-        "review": 4,
+        "ratting": 4,
         "img": "https://i.postimg.cc/qvcRYJj6/12.jpg"
     },
     {
@@ -126,7 +126,7 @@
         "catagory": "Women",
         "brand": "Jaeger-LeCoultre",
         "warranty": "24 months",
-        "review": 3,
+        "ratting": 3,
         "img": "https://i.postimg.cc/tTcCPYCw/13.jpg"
     },
     {
@@ -136,7 +136,7 @@
         "catagory": "Women",
         "brand": "Patek Philippe",
         "warranty": "24 months",
-        "review": 5,
+        "ratting": 5,
         "img": "https://i.postimg.cc/CKmKhvyF/14.jpg"
     },
     {
@@ -146,7 +146,7 @@
         "catagory": "Women",
         "brand": "Casio",
         "warranty": "24 months",
-        "review": 3,
+        "ratting": 3,
         "img": "https://i.postimg.cc/DZ0w8qF1/15.jpg"
     },
     {
@@ -156,7 +156,7 @@
         "catagory": "Women",
         "brand": "Patek Philippe",
         "warranty": "24 months",
-        "review": 4,
+        "ratting": 4,
         "img": "https://i.postimg.cc/fRvddf4P/16.jpg"
     },
     {
@@ -166,7 +166,7 @@
         "catagory": "Women",
         "brand": "Adidas",
         "warranty": "24 months",
-        "review": 5,
+        "ratting": 5,
         "img": "https://i.postimg.cc/c6yx923c/17.jpg"
     },
     {
@@ -176,7 +176,7 @@
         "catagory": "Women",
         "brand": "Jaeger-LeCoultre",
         "warranty": "24 months",
-        "review": 5,
+        "ratting": 5,
         "img": "https://i.postimg.cc/Vs3XPNBK/18.jpg"
     },
     {
@@ -186,7 +186,7 @@
         "catagory": "Women",
         "brand": "Patek Philippe",
         "warranty": "24 months",
-        "review": 4,
+        "ratting": 4,
         "img": "https://i.postimg.cc/WbggNP5T/19.jpg"
     },
     {
@@ -196,7 +196,7 @@
         "catagory": "Women",
         "brand": "Adidas",
         "warranty": "24 months",
-        "review": 4,
+        "ratting": 4,
         "img": "https://i.postimg.cc/13S64Yd6/20.jpg"
     }
 ]

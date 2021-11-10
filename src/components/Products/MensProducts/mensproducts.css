@@ -1,0 +1,28 @@
+.card-img-top{
+    height: 300px !important;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+.card{
+    border:1px solid transparent!important;
+    border-radius: 15px!important;
+    background-color: rgb(250, 246, 250)!important;
+    height: 650px;
+    width: 350px;
+    margin: 0 auto!important;
+    
+}
+.name-title {
+    color: blue !important;
+}
+.modal-content form{
+   text-align: center;
+
+}
+.modal-content label{
+    text-align: left !important;
+}
+.modal-content input,label{
+    width: 80%;
+    margin: 5px auto;
+}
