@@ -1,11 +1,13 @@
 import React from 'react';
-import { Form as Frm, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Form as Frm, Button, Spinner } from 'react-bootstrap';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './registrationform.css'
 
 const RegistrationForm = () => {
-    const { setName, setPassword, setEmail, registration, password, setError, error } = useAuth();
+    const location = useLocation();
+    const history = useHistory()
+    const { setName, setPassword, setEmail, registration, password, setError, error, isLoading } = useAuth();
     const handleName = e => {
         const name = e.target.value;
         setName(name);
@@ -24,31 +26,37 @@ const RegistrationForm = () => {
             return;
         }
         e.preventDefault();
-        registration();
+        registration(location, history);
     }
     return (
         <div className="registration-form-container">
 
-            <Frm onSubmit={handleRegistration}>
-                <Frm.Group className="mb-3" controlId="FrmBasicEmail">
-                    <Frm.Label>Type Your Name</Frm.Label>
-                    <Frm.Control onBlur={handleName} type="text" placeholder="Enter your Name" />
-                    <Frm.Label>Email address</Frm.Label>
-                    <Frm.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
+            {isLoading &&
+                < Spinner animation="border" variant="dark" />
+            }
+            {
+                !isLoading && <Frm onSubmit={handleRegistration}>
+                    <Frm.Group className="mb-3" controlId="FrmBasicEmail">
+                        <Frm.Label>Type Your Name</Frm.Label>
+                        <Frm.Control onBlur={handleName} type="text" placeholder="Enter your Name" />
+                        <Frm.Label>Email address</Frm.Label>
+                        <Frm.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
 
-                </Frm.Group>
+                    </Frm.Group>
 
-                <Frm.Group className="mb-3" controlId="FrmBasicPassword">
-                    <Frm.Label>Password</Frm.Label>
-                    <Frm.Control onBlur={handlePassword} type="password" placeholder="Password" />
-                </Frm.Group>
+                    <Frm.Group className="mb-3" controlId="FrmBasicPassword">
+                        <Frm.Label>Password</Frm.Label>
+                        <Frm.Control onBlur={handlePassword} type="password" placeholder="Password" />
+                    </Frm.Group>
 
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
+                    <Button variant="primary" type="submit">
+                        Submit
+                    </Button>
 
 
-            </Frm>
+                </Frm>
+            }
+
             <p>{error}</p>
             <p>Already Registred? Then <Link to="/login">Login</Link></p>
         </div>

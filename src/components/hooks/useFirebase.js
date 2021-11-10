@@ -11,58 +11,72 @@ const useFirebase = () => {
     const [name, setName] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
-    const googleLogin = () => {
+    const googleLogin = (location, history) => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
         signInWithPopup(auth, googleProvider)
             .then((result) => {
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 const user = result.user;
                 setUser(user);
                 setError('');
-            }).finally((error) => {
-                setIsLoading(false);
+            })
+            .catch((error) => {
                 setError(error.message);
+            }).finally(() => {
+                setIsLoading(false)
             });
     }
-    const login = () => {
+    const login = (location, history) => {
+        setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 const user = result?.user;
                 setUser(user);
                 setError('');
-            })
-            .finally((error) => {
-                setIsLoading(false);
+            }).catch((error) => {
                 setError(error.message);
+            }).finally(() => {
+                setIsLoading(false)
             });
     }
-    const registration = () => {
+    const registration = (location, history) => {
+        setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 const user = userCredential.user;
+
                 setError('');
                 updateName();
                 setUser(user);
+                console.log(user);
 
-            })
-            .finally((error) => {
-                setIsLoading(false);
+            }).catch((error) => {
                 setError(error.message);
-
+            }).finally(() => {
+                setIsLoading(false)
             });
     }
     const logOut = () => {
+        setIsLoading(true);
         signOut(auth).then(() => {
             setUser('');
             setError('');
-        }).finally((error) => {
-            setIsLoading(false);
+        }).catch((error) => {
             setError(error.message);
+        }).finally(() => {
+            setIsLoading(false)
         });
     }
     const updateName = () => {
         updateProfile(auth.currentUser, { displayName: name })
             .then((result) => {
+
                 setError('');
 
             }).catch((error) => {
@@ -79,7 +93,7 @@ const useFirebase = () => {
             }
             setIsLoading(false);
         });
-    }, []);
+    }, [auth]);
     return {
         googleLogin, error, user, password, setPassword, email, setEmail, login, setName, registration, logOut, isLoading
     }
