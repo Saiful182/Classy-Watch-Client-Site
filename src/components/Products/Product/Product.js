@@ -60,16 +60,15 @@ const Product = () => {
                         </Modal.Header>
                         <Modal.Body>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <label>User Name</label>
-                                <input {...register("userName")} value={user.displayName} />
-                                <label>Email</label>
-                                <input {...register("email")} value={user.email} />
-                                <label >Model No</label>
-                                <input {...register("modelNo")} value={Id} />
-                                <label>Approval</label>
-                                <input {...register("appoval")} value='Pending' />
-                                <label >Product Link</label>
-                                <input {...register("img")} value={product.img} />
+
+                                <input type="hidden"{...register("userName")} value={user.displayName} />
+                                <input type="hidden" {...register("email")} value={user.email} />
+                                <input type="hidden" {...register("name")} value={product.name} /> <input type="hidden" {...register("price")} value={product.price} /> <input type="hidden" {...register("catagory")} value={product.catagory} />
+                                <input type="hidden" {...register("modelNo")} value={Id} />
+
+                                <input type="hidden" {...register("appoval")} value='Pending' />
+
+                                <input type="hidden" {...register("img")} value={product.img} />
                                 <label >Your Age</label>
                                 <input required type="number" {...register("userAge")} />
                                 <label >Shipping Address</label> <br />

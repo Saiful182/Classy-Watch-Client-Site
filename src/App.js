@@ -13,6 +13,7 @@ import Product from './components/Products/Product/Product';
 import ProductsContainer from './components/Products/ProductsContainer/ProductsContainer';
 import Registration from './components/Registration/Registration/Registration';
 import Home from './components/Shared/Home/Home/Home';
+import UserOrders from './components/UserOrders/UserOrders/UserOrders';
 import AuthProvider from './context/AuthProvider';
 
 function App() {
@@ -35,7 +36,9 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-
+            <PrivateRoute path="/userorders">
+              <UserOrders></UserOrders>
+            </PrivateRoute>
             <PrivateRoute path="/products/:Id">
               <Product></Product>
             </PrivateRoute>
