@@ -1,14 +1,18 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png'
+import useAuth from '../hooks/useAuth';
+
 import './header.css'
 
 const Header = () => {
+    const { user, logOut } = useAuth();
+    const handleLogOut = () => {
+        logOut();
+    }
     return (
         <div>
-
-
             <Navbar variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">
@@ -35,8 +39,13 @@ const Header = () => {
                                 <NavDropdown.Item as={Link} to="/review">Review</NavDropdown.Item>
 
                             </NavDropdown>
+                            {
+                                user.email && <Nav.Link > HI! {user.displayName}</Nav.Link>
+                            }
+                            {
+                                user.email ? <Nav.Link as={Button} onClick={handleLogOut}  >Logout</Nav.Link> : <Nav.Link as={Link} to="/login" >Log in</Nav.Link>
+                            }
 
-                            <Nav.Link as={Link} to="/login" >Log in</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

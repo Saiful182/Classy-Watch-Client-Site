@@ -1,11 +1,12 @@
 
 import { Form as Frm, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 import './form.css'
 
 const Form = () => {
-    const { googleLogin, error, setEmail, setPassword, email, password, login } = useFirebase()
+    const { googleLogin, error, setEmail, setPassword, email, password, login } = useAuth()
+
 
     const handleEmail = e => {
         const email = e.target.value;

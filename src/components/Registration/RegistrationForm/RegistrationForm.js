@@ -1,12 +1,11 @@
 import React from 'react';
 import { Form as Frm, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 import './registrationform.css'
 
 const RegistrationForm = () => {
-
-    const { setName, setPassword, setEmail, registration } = useFirebase();
+    const { setName, setPassword, setEmail, registration, password, setError, error } = useAuth();
     const handleName = e => {
         const name = e.target.value;
         setName(name);
@@ -20,6 +19,10 @@ const RegistrationForm = () => {
         setPassword(password);
     }
     const handleRegistration = e => {
+        if (password.length < 6) {
+            setError('Password Should be more then 6 charecter');
+            return;
+        }
         e.preventDefault();
         registration();
     }
@@ -46,7 +49,7 @@ const RegistrationForm = () => {
 
 
             </Frm>
-
+            <p>{error}</p>
             <p>Already Registred? Then <Link to="/login">Login</Link></p>
         </div>
     );
