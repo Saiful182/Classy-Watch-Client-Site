@@ -1,0 +1,11 @@
+.review-section form{
+    text-align: center;
+ 
+ }
+ .review-section label{
+     text-align: left !important;
+ }
+ .review-section input,label{
+     width: 80%;
+     margin: 5px auto;
+ }

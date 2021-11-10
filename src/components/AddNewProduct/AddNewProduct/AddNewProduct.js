@@ -13,9 +13,7 @@ const AddNewProduct = () => {
             .then(res => {
                 if (res.data?.insertedId) {
 
-                    <Alert variant={'info'}>
-                        Added to Your Card sucessfully!
-                    </Alert>
+                    alert('Watch Added to Your Cart');
 
                     reset();
                 }
