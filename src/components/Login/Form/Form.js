@@ -1,26 +1,26 @@
-
+import React, { useState } from 'react';
 import { Form as Frm, Button, Spinner } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './form.css'
 
 const Form = () => {
-
+    const [loginData, setLoginData] = useState({})
     const location = useLocation();
     const history = useHistory()
-    const { googleLogin, error, setEmail, setPassword, login, isLoading } = useAuth()
-    const handleEmail = e => {
-        const email = e.target.value;
-        setEmail(email);
-    }
-    const handlePassword = e => {
-        const password = e.target.value;
-        setPassword(password);
+    const { googleLogin, error, login, isLoading } = useAuth()
+    console.log(loginData);
+    const handleOnBlur = e => {
+        const field = e.target.type;
+        const value = e.target.value;
+        const newLogInData = { ...loginData }
+        newLogInData[field] = value;
+        setLoginData(newLogInData);
     }
     const handleLogin = e => {
         e.preventDefault();
         e.target.value = '';
-        login(location, history);
+        login(loginData.email, loginData.password, location, history);
     }
     const handleGoogleLogin = e => {
         e.preventDefault();
@@ -35,15 +35,13 @@ const Form = () => {
                 < Frm onSubmit={handleLogin} >
                     <Frm.Group className="mb-3" controlId="FrmBasicEmail">
                         <Frm.Label>Email address</Frm.Label>
-                        <Frm.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
-                        <Frm.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Frm.Text>
+                        <Frm.Control onBlur={handleOnBlur} type="email" placeholder="Enter email" />
+
                     </Frm.Group>
 
                     <Frm.Group className="mb-3" controlId="FrmBasicPassword">
                         <Frm.Label>Password</Frm.Label>
-                        <Frm.Control onBlur={handlePassword} type="password" placeholder="Password" />
+                        <Frm.Control onBlur={handleOnBlur} type="password" placeholder="Password" />
                     </Frm.Group>
 
                     <Button variant="primary" type="submit">
@@ -57,7 +55,7 @@ const Form = () => {
                 < h4 > Or login With < Button onClick={handleGoogleLogin} variant="primary" type="submit" >
                     Google
                 </Button ></h4 >
-                <p>{error}</p>
+                <p style={{ 'color': 'red' }} >{error}</p>
                 <p>New to this site? Please <Link to="/registration">Register</Link></p>
             </div>
 

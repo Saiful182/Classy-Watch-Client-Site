@@ -1,13 +1,11 @@
 import initialization from "../Shared/Firebase/initialization";
 import { GoogleAuthProvider, onAuthStateChanged, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
-
+import axios from 'axios';
 initialization();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
@@ -19,7 +17,7 @@ const useFirebase = () => {
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
                 const user = result.user;
-                setUser(user);
+                saveUser(user.email, user.displayName);
                 setError('');
             })
             .catch((error) => {
@@ -28,14 +26,13 @@ const useFirebase = () => {
                 setIsLoading(false)
             });
     }
-    const login = (location, history) => {
+    const login = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
                 const user = result?.user;
-                setUser(user);
                 setError('');
             }).catch((error) => {
                 setError(error.message);
@@ -43,19 +40,21 @@ const useFirebase = () => {
                 setIsLoading(false)
             });
     }
-    const registration = (location, history) => {
+    const registration = (name, email, password, location, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
-                const user = userCredential.user;
 
-                setError('');
-                updateName();
-                setUser(user);
-                console.log(user);
-
+                updateProfile(auth.currentUser, { displayName: name })
+                    .then((result) => {
+                        console.log(result.length);
+                        setError('');
+                    }).catch((error) => {
+                        setError(error.message)
+                    });
+                saveUser(email, name);
             }).catch((error) => {
                 setError(error.message);
             }).finally(() => {
@@ -73,18 +72,9 @@ const useFirebase = () => {
             setIsLoading(false)
         });
     }
-    const updateName = () => {
-        updateProfile(auth.currentUser, { displayName: name })
-            .then((result) => {
 
-                setError('');
-
-            }).catch((error) => {
-                setError(error.message)
-            });
-    }
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
             }
@@ -93,10 +83,21 @@ const useFirebase = () => {
             }
             setIsLoading(false);
         });
-    }, [auth]);
+        return () => unsubscribe;
+    }, []);
+
+    const saveUser = (email, displayName) => {
+        const user = { email, displayName };
+        axios.post('http://localhost:5000/users', user)
+            .then(res => {
+                if (res.data?.insertedId) {
+                    alert('User Added in Database');
+                }
+            })
+    }
+
     return {
-        googleLogin, error, user, password, setPassword, email, setEmail, login, setName, registration, logOut, isLoading
+        googleLogin, error, user, login, setName, registration, logOut, isLoading
     }
 }
-
 export default useFirebase;

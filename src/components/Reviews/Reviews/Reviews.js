@@ -13,9 +13,7 @@ const Reviews = () => {
                     <InputRevew></InputRevew>
                 </Col>
                 <Col sm={8}>
-
                     <ReviewSection></ReviewSection>
-
                 </Col>
 
             </Row>
