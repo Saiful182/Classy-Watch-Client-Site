@@ -1,8 +1,9 @@
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import AddProductContainer from './components/AddNewProduct/AddProductContainer/AddProductContainer';
-
+import AddProductContainer from './components/AdminPanel/AddNewProduct/AddProductContainer/AddProductContainer';
+import AdminPanel from './components/AdminPanel/AdminPanel/AdminPanel';
+import Users from './components/AdminPanel/Users/Users/Users';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login/Login';
@@ -37,6 +38,13 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+            <Route path="/users">
+              <Users></Users>
+            </Route>
+            <PrivateRoute
+              path="/adminpanel">
+              <AdminPanel></AdminPanel>
+            </PrivateRoute>
             <PrivateRoute path="/reviews">
               <Reviews></Reviews>
             </PrivateRoute>

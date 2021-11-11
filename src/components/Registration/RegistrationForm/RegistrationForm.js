@@ -8,8 +8,7 @@ const RegistrationForm = () => {
     const [loginData, setLoginData] = useState({});
     const location = useLocation();
     const history = useHistory()
-    const { user, setName, registration, setError, error, isLoading } = useAuth();
-    setName(loginData.text)
+    const { user, registration, setError, error, isLoading } = useAuth();
     const handleOnBlur = e => {
         const field = e.target.type;
         const value = e.target.value;

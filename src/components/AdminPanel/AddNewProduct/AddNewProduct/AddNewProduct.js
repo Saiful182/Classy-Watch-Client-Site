@@ -1,7 +1,6 @@
 
 import axios from 'axios';
 import React from 'react';
-import { Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './addnewproduct.css'
 
@@ -12,9 +11,7 @@ const AddNewProduct = () => {
         axios.post('http://localhost:5000/products', data)
             .then(res => {
                 if (res.data?.insertedId) {
-
                     alert('Watch Added to Your Cart');
-
                     reset();
                 }
             })

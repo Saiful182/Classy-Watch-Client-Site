@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../../images/others/newproduct.png'
+import image from '../../../../images/others/newproduct.png'
 import './addproductimage.css';
 const AddProductImage = () => {
     return (

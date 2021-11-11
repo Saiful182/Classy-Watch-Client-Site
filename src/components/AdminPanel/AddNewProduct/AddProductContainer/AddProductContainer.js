@@ -8,8 +8,10 @@ const AddProductContainer = () => {
     return (
         <div>
             <Row xs={1} md={2}>
-                <Col><AddProductImage></AddProductImage></Col>
-                <Col><AddNewProduct></AddNewProduct></Col>
+                <Col><AddProductImage></AddProductImage>
+                </Col>
+                <Col><AddNewProduct></AddNewProduct>
+                </Col>
 
             </Row>
         </div>

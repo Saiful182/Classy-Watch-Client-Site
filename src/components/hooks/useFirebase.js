@@ -1,12 +1,10 @@
 import initialization from "../Shared/Firebase/initialization";
 import { GoogleAuthProvider, onAuthStateChanged, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
-import axios from 'axios';
 initialization();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
-    const [name, setName] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
     const googleLogin = (location, history) => {
@@ -17,7 +15,7 @@ const useFirebase = () => {
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
                 const user = result.user;
-                saveUser(user.email, user.displayName);
+                saveUser(user.email, user.displayName, 'PUT');
                 setError('');
             })
             .catch((error) => {
@@ -46,7 +44,6 @@ const useFirebase = () => {
             .then((userCredential) => {
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
-
                 updateProfile(auth.currentUser, { displayName: name })
                     .then((result) => {
                         console.log(result.length);
@@ -54,7 +51,7 @@ const useFirebase = () => {
                     }).catch((error) => {
                         setError(error.message)
                     });
-                saveUser(email, name);
+                saveUser(email, name, 'POST');
             }).catch((error) => {
                 setError(error.message);
             }).finally(() => {
@@ -86,18 +83,22 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, []);
 
-    const saveUser = (email, displayName) => {
+    const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        axios.post('http://localhost:5000/users', user)
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
             .then(res => {
-                if (res.data?.insertedId) {
-                    alert('User Added in Database');
-                }
+
             })
     }
 
     return {
-        googleLogin, error, user, login, setName, registration, logOut, isLoading
+        googleLogin, error, user, login, registration, logOut, isLoading
     }
 }
 export default useFirebase;
