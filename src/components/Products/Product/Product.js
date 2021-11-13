@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row, Button, Modal } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './product.css'
 import { Rating } from 'react-simple-star-rating'
@@ -9,23 +9,22 @@ import axios from 'axios';
 
 const Product = () => {
 
+    const location = useLocation();
+    const history = useHistory()
     const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const onSubmit = (cart) => {
-        console.log(cart);
-
-
         axios.post('http://localhost:5000/carts', cart)
             .then(res => {
-
                 if (res.data?.insertedId) {
                     reset();
-
                     alert('Your Watch has beed added to your Cart')
                     handleClose();
+                    const destination = '/products';
+                    history.replace(destination);
                 }
             })
     }

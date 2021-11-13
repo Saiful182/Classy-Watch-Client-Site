@@ -1,11 +1,8 @@
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import AddProductContainer from './components/AdminPanel/AddNewProduct/AddProductContainer/AddProductContainer';
-import AdminPanel from './components/AdminPanel/AdminPanel/AdminPanel';
-import Users from './components/AdminPanel/Users/Users/Users';
 import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+import Header from './components/Header/Header/Header';
 import Login from './components/Login/Login/Login';
 import Notfound from './components/NotFound/Notfound';
 import Pay from './components/Pay/Pay';
@@ -17,7 +14,10 @@ import Reviews from './components/Reviews/Reviews/Reviews';
 import Home from './components/Shared/Home/Home/Home';
 import UserOrders from './components/UserOrders/UserOrders/UserOrders';
 import AuthProvider from './context/AuthProvider';
-
+import Users from './components/AdminPanel/Users/Users/Users'
+import ManageProducts from './components/AdminPanel/ManageProducts/ManageProducts';
+import AddNewProduct from './components/AdminPanel/AddNewProduct/AddNewProduct/AddNewProduct';
+import ManageAllOrders from './components/AdminPanel/ManageAllorders/ManageAllOrders/ManageAllOrders';
 function App() {
   return (
     <div >
@@ -38,12 +38,17 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/users">
+            <PrivateRoute path="/users">
               <Users></Users>
-            </Route>
-            <PrivateRoute
-              path="/adminpanel">
-              <AdminPanel></AdminPanel>
+            </PrivateRoute>
+            <PrivateRoute path="/addnewproduct">
+              <AddNewProduct></AddNewProduct>
+            </PrivateRoute>
+            <PrivateRoute path="/manageallorders">
+              <ManageAllOrders></ManageAllOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/manageproducts">
+              <ManageProducts></ManageProducts>
             </PrivateRoute>
             <PrivateRoute path="/reviews">
               <Reviews></Reviews>
@@ -53,9 +58,6 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/products/:Id">
               <Product></Product>
-            </PrivateRoute>
-            <PrivateRoute path="/addnewproduct">
-              <AddProductContainer></AddProductContainer>
             </PrivateRoute>
             <PrivateRoute path="/pay">
               <Pay></Pay>

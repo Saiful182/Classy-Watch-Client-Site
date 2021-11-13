@@ -12,6 +12,9 @@
     margin: 0 auto!important;
     
 }
+.card-title {
+    color:black !important;
+}
 .name-title {
     color: blue !important;
 }

@@ -1,3 +1,28 @@
+.header-container{
+    display: flex;
+    width: 100%;
+    clear: both;
+    background-color:#132549 ;
+}.user-log-in{
+    text-align: end;
+}
 .navbar{
     background-color:#132549 ;
+    clear: both;
+}
+.offcanvas {
+    background-color:#132549;
+
+}
+.nav-container img{
+    height: 30px !important;
+    margin-right: 10px !important;
+    
+}
+
+.navbar-nav{
+    position: none !important;
+}
+.offcanvas-start {
+    width: 250px;
 }

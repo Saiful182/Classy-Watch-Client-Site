@@ -5,8 +5,6 @@ import useCart from '../../hooks/useCart';
 import './UserOrders.css'
 
 const UserOrder = (props) => {
-
-
     const { cart, setCart } = useCart();
     const { _id, name, price, img, catagory, appoval, address, phoneNumber } = props.singleCart;
     const handelRemoveiteam = _id => {
@@ -20,7 +18,6 @@ const UserOrder = (props) => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         const remainingCart = cart.filter(cart => cart._id !== _id)
-
                         setCart(remainingCart);
                         alert('Your order Canceled Successfully');
 

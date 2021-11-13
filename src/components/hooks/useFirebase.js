@@ -30,7 +30,7 @@ const useFirebase = () => {
             .then((result) => {
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
-                const user = result?.user;
+
                 setError('');
             }).catch((error) => {
                 setError(error.message);

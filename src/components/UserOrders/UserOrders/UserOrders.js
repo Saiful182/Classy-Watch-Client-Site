@@ -8,10 +8,7 @@ import './userorders.css';
 const UserOrders = () => {
     const { cart } = useCart();
     const { user } = useAuth();
-
     const userCart = cart.filter(cart => (cart.email === user.email));
-
-    console.log(userCart.length);
     return (
         <div className="cart-container">
             <Row >

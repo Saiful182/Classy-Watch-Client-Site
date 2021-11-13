@@ -24,7 +24,7 @@ const MensProducts = (props) => {
                     <Card.Body>
                         <Card.Title className='name-title'>Name: {name}</Card.Title>
                         <Card.Title>Price: {price}$</Card.Title>
-                        <Card.Title>Brand Name: {brand}</Card.Title>
+                        <Card.Title>Brand Name:  {brand}</Card.Title>
                         <Card.Text>
                             {description.slice(0, 150)}
                         </Card.Text>

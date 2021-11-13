@@ -5,6 +5,6 @@
    text-align: center;
 }
 .singleproduct-img img{
-width: 98%;
+width: 60% !important;
 height: 500px;
 }
