@@ -31,9 +31,7 @@ const Product = () => {
     const [rating, setRating] = useState(0)
     const { Id } = useParams()
     const [product, setProduct] = useState({});
-
     useEffect(() => {
-
         fetch(`http://localhost:5000/products/${Id}`)
             .then(res => res.json())
             .then(data => setProduct(data))

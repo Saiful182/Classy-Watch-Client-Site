@@ -15,9 +15,12 @@ import Home from './components/Shared/Home/Home/Home';
 import UserOrders from './components/UserOrders/UserOrders/UserOrders';
 import AuthProvider from './context/AuthProvider';
 import Users from './components/AdminPanel/Users/Users/Users'
-import ManageProducts from './components/AdminPanel/ManageProducts/ManageProducts';
+
 import AddNewProduct from './components/AdminPanel/AddNewProduct/AddNewProduct/AddNewProduct';
 import ManageAllOrders from './components/AdminPanel/ManageAllorders/ManageAllOrders/ManageAllOrders';
+
+import ManageProducts from './components/AdminPanel/ManageProducts/ManageProducts/ManageProducts';
+
 function App() {
   return (
     <div >

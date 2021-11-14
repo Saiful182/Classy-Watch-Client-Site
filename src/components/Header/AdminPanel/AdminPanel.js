@@ -7,7 +7,6 @@ const AdminPanel = () => {
     const { user } = useAuth();
     const { users } = useUser();
     const adminUser = users.filter(user => user.role === 'Admin');
-    console.log(adminUser);
     return (
         <>
             {

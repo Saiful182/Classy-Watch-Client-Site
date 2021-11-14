@@ -1,0 +1,19 @@
+.error-container img{
+    width: 100%;
+}
+.error-container{
+   text-align: center;
+}
+.error-button{
+    margin-bottom:-400px !important;
+}
+.error-container{
+    /* Background pattern from Toptal Subtle Patterns */
+       height: 800px;
+       width: 100%;
+       background-image: 
+           url("../../images/3828537.jpg");
+       background-repeat: no-repeat;
+       background-position: center; 
+      
+    }

@@ -17,15 +17,8 @@ const HeaderSideBar = () => {
     const handleShow = () => setShow(true);
     const { users } = useUser();
     const { user } = useAuth();
-    console.log(user.email);
     const adminUser = users.filter(user => user.role === 'Admin');
-    console.log(adminUser);
-    if (adminUser.filter(admin => admin.email === user.email)) {
-        console.log('true');
-    }
-    else {
-        console.log('false');
-    }
+
     return (
         <>
             <>
