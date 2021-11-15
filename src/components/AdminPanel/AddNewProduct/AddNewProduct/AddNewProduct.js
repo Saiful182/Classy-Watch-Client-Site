@@ -18,7 +18,7 @@ const AddNewProduct = () => {
     };
     return (
         <div className="whole-container">
-            <div className="form-container">
+            <div className="add-products-form-container">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label >Type Name Of Product</label>
                     <input type="text" {...register("name")} placeholder="Product Name" /> <br />
@@ -36,7 +36,7 @@ const AddNewProduct = () => {
                     <input {...register("img")} placeholder="Give image link" />
                     <label >Warranty</label>
                     <input type="text" {...register("warranty")} placeholder="Example: 3 Month" />
-                    <input type="submit" />
+                    <input className="btn btn-primary" type="submit" />
                 </form>
             </div>
         </div>

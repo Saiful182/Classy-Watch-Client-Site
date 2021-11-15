@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Jaeger-LeCoultre",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/jaeger-lecoultre-1636409995.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+        "name": "Audemars Piguet",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/audemars-piguet-1636410068.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+        "name": "Frédérique Constant",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/frederique-constant-1636410481.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+        "name": "Piaget",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/piaget-1636410151.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+        "name": "Cartier",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cartier-1636410199.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+        "name": "Harry Winston",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/harry-winston-1636410275.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+        "name": "Blancpain",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/blancpain-1636410423.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+        "name": "Longines",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/longines-1636410346.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+        "name": "Zenith",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/zenith-1636410580.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+        "name": "Tudor",
+        "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tudor-1636410890.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    }
+]

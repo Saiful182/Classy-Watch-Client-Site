@@ -1,20 +1,23 @@
-.form-container{
+.add-products-form-container{
     width: 40%;
-    margin:0 auto;
+margin: 0 0 0 10px;
     border: 1px solid none;
-    background-color: rgba(117, 117, 139, 0.5);;
     padding: 30px;
     border-radius: 10px;
+    background-color:white;
  }
- .form-container input{
+ .add-products-form-container input{
      width: 100%;
      margin: 5px 0;
  }
- .form-container label{
+ .add-products-form-container label{
      font-size: large;
      font-weight: bold;
  }
  .whole-container{
-    
+  background-image: url('../../../../images/Banner/add product.jpg');
      padding: 30px 0;
+     background-position:center; 
+        background-repeat:no-repeat;
+        background-size: cover;
  }

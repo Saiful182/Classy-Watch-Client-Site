@@ -3,4 +3,9 @@
     text-align: left;
     width: 60% !important;
     margin: 80px auto;
+    background-color: white;
+    border-radius: 10px;
+}
+.registration-form-container p{
+    color: black;
 }

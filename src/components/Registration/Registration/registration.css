@@ -1,2 +1,8 @@
 .row{
     --bs-gutter-x: none;}
+    .registration-container{
+        background-image: url('../../../images/Banner/womenreg.jpeg');
+        background-position:center; 
+        background-repeat:no-repeat;
+        background-size: cover;
+    }

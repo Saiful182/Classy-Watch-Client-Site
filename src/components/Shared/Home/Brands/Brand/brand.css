@@ -1,0 +1,11 @@
+.bg-dark{
+    width: 200px !important;
+    height: 200px !important;
+    background-color: none !important;
+    text-align: center;
+}
+.bg-dark img{
+    width: 100% !important;
+    height: 170px !important;
+    border-radius: 10px !important;
+}

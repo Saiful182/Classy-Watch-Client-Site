@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import useCart from '../../hooks/useCart';
+import UserCart from '../UserCart/UserCart';
 import UserOrder from '../UserOrder/UserOrder';
 import './userorders.css';
 
@@ -21,8 +22,12 @@ const UserOrders = () => {
                     </Row>
                 </Col>
                 <Col sm={4}>
-                    <h4>Total Added Items :{userCart.length}</h4>
+                    {
+                        userCart.map(singleCart => <UserCart singleCart={singleCart} key={singleCart._id}></UserCart>)
+                    }
                 </Col>
+
+
 
             </Row>
         </div>

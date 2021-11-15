@@ -3,7 +3,7 @@ import { Form as Frm, Button, Spinner } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './form.css'
-
+import { GoogleLoginButton } from "react-social-login-buttons";
 const Form = () => {
     const [loginData, setLoginData] = useState({})
     const location = useLocation();
@@ -49,12 +49,9 @@ const Form = () => {
                     </Button>
                 </Frm >
             }
-
-
             <div>
-                < h4 > Or login With < Button onClick={handleGoogleLogin} variant="primary" type="submit" >
-                    Google
-                </Button ></h4 >
+                < h4 > Or </h4 >
+                <GoogleLoginButton onClick={handleGoogleLogin} />
                 <p style={{ 'color': 'red' }} >{error}</p>
                 <p>New to this site? Please <Link to="/registration">Register</Link></p>
             </div>

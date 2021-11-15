@@ -1,0 +1,12 @@
+.logo-container{
+    padding: 20px;
+}
+.footer-vuttom-container{
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer-vuttom-container p{
+    color: black ;
+}

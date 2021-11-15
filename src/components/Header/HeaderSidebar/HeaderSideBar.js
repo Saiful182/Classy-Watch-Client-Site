@@ -17,8 +17,8 @@ const HeaderSideBar = () => {
     const handleShow = () => setShow(true);
     const { users } = useUser();
     const { user } = useAuth();
-    const adminUser = users.filter(user => user.role === 'Admin');
-
+    const admin = users.find(admin => admin.role === 'Admin');
+    console.log(admin);
     return (
         <>
             <>
@@ -33,8 +33,9 @@ const HeaderSideBar = () => {
                         user.email ? <Offcanvas.Body>
 
                             {
-                                adminUser.map(admin => admin.email === user.email) ? < AdminPanel ></AdminPanel> : <UserPanel></UserPanel>
+                                admin?.email === user?.email ? < AdminPanel ></AdminPanel> : <UserPanel></UserPanel>
                             }
+
                         </Offcanvas.Body> : <Offcanvas.Body>
                             <p>Please Log in to find more option</p>
                         </Offcanvas.Body>

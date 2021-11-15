@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { Rating } from 'react-simple-star-rating'
+import './homereview.css'
 const HomeReview = (props) => {
     const [ratings, setRatings] = useState(0)
     const { name, rating, comment } = props.review;
@@ -18,7 +19,7 @@ const HomeReview = (props) => {
                     <Card.Body>
                         <Card.Text>{slicedComment}</Card.Text>
 
-                        <p>Ratings:</p>
+                        <p style={{ "color": "black" }}>Ratings:</p>
                         <Rating onClick={handleRating} ratingValue={rating} /* Rating Props */ />
 
                     </Card.Body>

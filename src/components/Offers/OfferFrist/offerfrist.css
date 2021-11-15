@@ -1,0 +1,11 @@
+.Offer-tag p{
+    background-color: red;
+    font :15px arial white;
+    padding:5px  10px ;
+    width: max-content;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+.card-offers{
+    margin: 10px 0;
+}

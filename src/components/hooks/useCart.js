@@ -6,7 +6,7 @@ const useCart = () => {
         fetch('http://localhost:5000/carts')
             .then(res => res.json())
             .then(data => setCart(data))
-    }, [])
+    }, [cart])
     return {
         cart, setCart
     }

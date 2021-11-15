@@ -1,12 +1,9 @@
 import React from 'react';
 import { NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
-import useUser from '../../hooks/useUser';
+
 const AdminPanel = () => {
-    const { user } = useAuth();
-    const { users } = useUser();
-    const adminUser = users.filter(user => user.role === 'Admin');
+
     return (
         <>
             {

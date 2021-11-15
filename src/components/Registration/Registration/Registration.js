@@ -6,7 +6,7 @@ import './registration.css'
 
 const Registration = () => {
     return (
-        <div>
+        <div className="registration-container">
 
             <Row xs={1} md={2} lg={2}  >
                 <Col><RegistrationForm></RegistrationForm></Col>

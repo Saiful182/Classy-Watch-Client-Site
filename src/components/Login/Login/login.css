@@ -1,2 +1,8 @@
 .row{
     --bs-gutter-x: none;}
+    .logIn-container{
+        background-image: url('../../../images/Banner/banner.jpeg');
+        background-position:center; 
+        background-repeat:no-repeat;
+        background-size: cover;
+    }

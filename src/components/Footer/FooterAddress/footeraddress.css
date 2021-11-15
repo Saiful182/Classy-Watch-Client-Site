@@ -1,0 +1,8 @@
+.review-text{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.review-text p{
+    margin:3px 0 ;
+}

@@ -1,7 +1,6 @@
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header/Header';
 import Login from './components/Login/Login/Login';
 import Notfound from './components/NotFound/Notfound';
@@ -20,6 +19,8 @@ import AddNewProduct from './components/AdminPanel/AddNewProduct/AddNewProduct/A
 import ManageAllOrders from './components/AdminPanel/ManageAllorders/ManageAllOrders/ManageAllOrders';
 
 import ManageProducts from './components/AdminPanel/ManageProducts/ManageProducts/ManageProducts';
+import FooterContainer from './components/Footer/FooterContainer/FooterContainer';
+import Offers from './components/Offers/offers/Offers';
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
-            <Route path="/home">
+            <Route exact path="/home">
               <Home></Home>
             </Route>
             <Route exact path="/products">
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/offers">
+              <Offers></Offers>
             </Route>
             <PrivateRoute path="/users">
               <Users></Users>
@@ -72,7 +76,7 @@ function App() {
               <Notfound></Notfound>
             </Route>
           </Switch>
-          <Footer></Footer>
+          <FooterContainer></FooterContainer>
         </BrowserRouter>
       </AuthProvider>
     </div>

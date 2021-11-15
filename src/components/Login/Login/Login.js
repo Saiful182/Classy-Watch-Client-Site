@@ -7,7 +7,7 @@ import './login.css'
 
 const Login = () => {
     return (
-        <div>
+        <div className="logIn-container">
 
             <Row xs={1} md={2} lg={2}>
 
