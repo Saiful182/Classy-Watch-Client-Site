@@ -20,6 +20,7 @@ import ManageProducts from './components/AdminPanel/ManageProducts/ManageProduct
 import FooterContainer from './components/Footer/FooterContainer/FooterContainer';
 import Offers from './components/Offers/offers/Offers';
 import Product from './components/Products/Product/Product';
+import AboutUs from './components/AboutUs/AboutUs';
 function App() {
   return (
     <div >
@@ -42,6 +43,9 @@ function App() {
             </Route>
             <Route path="/offers">
               <Offers></Offers>
+            </Route>
+            <Route path="/aboutus">
+              <AboutUs></AboutUs>
             </Route>
             <PrivateRoute path="/users">
               <Users></Users>
