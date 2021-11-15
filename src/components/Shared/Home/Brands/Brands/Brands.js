@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import useBrands from '../../../../hooks/useBrands';
 import Brand from '../Brand/Brand';
 import image from "../../../../../images/Banner/brand banner.jpeg"
@@ -14,11 +14,14 @@ const Brands = () => {
 
                 <h2>Our Top Brands </h2>
             </div>
-            <Row sm={2} md={3} lg={5} className="g-4">
-                {
-                    brands.map(brand => <Brand brand={brand} key={brand.key}></Brand>)
-                }
-            </Row>
+            {
+                brands?.length <= 0 ? < Spinner style={{ "textAlign": "center" }} animation="border" variant="dark" /> : <Row sm={2} md={3} lg={5} className="g-4">
+                    {
+                        brands.map(brand => <Brand brand={brand} key={brand.key}></Brand>)
+                    }
+                </Row>
+            }
+
         </div>
     );
 };

@@ -7,7 +7,7 @@ const useProducts = () => {
         fetch('https://radiant-temple-68689.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, [products])
 
     return {
         products, setProducts

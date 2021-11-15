@@ -6,7 +6,6 @@ import Login from './components/Login/Login/Login';
 import Notfound from './components/NotFound/Notfound';
 import Pay from './components/Pay/Pay';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-
 import ProductsContainer from './components/Products/ProductsContainer/ProductsContainer';
 import Registration from './components/Registration/Registration/Registration';
 import Reviews from './components/Reviews/Reviews/Reviews';
@@ -21,7 +20,6 @@ import ManageProducts from './components/AdminPanel/ManageProducts/ManageProduct
 import FooterContainer from './components/Footer/FooterContainer/FooterContainer';
 import Offers from './components/Offers/offers/Offers';
 import Product from './components/Products/Product/Product';
-
 function App() {
   return (
     <div >

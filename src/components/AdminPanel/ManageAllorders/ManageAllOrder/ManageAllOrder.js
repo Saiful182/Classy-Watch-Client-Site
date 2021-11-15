@@ -21,6 +21,7 @@ const ManageAllOrder = (props) => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     alert('updated data sucessfully');
+
                 }
             })
     }

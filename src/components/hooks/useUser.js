@@ -7,7 +7,7 @@ const useUser = () => {
         fetch('https://radiant-temple-68689.herokuapp.com/users')
             .then(res => res.json())
             .then(data => setUsers(data))
-    }, [])
+    }, [users])
 
     return {
         users, setUsers

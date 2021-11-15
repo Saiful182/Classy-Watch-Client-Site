@@ -6,7 +6,7 @@ const useCart = () => {
         fetch('https://radiant-temple-68689.herokuapp.com/carts')
             .then(res => res.json())
             .then(data => setCart(data))
-    }, [setCart])
+    }, [cart])
     return {
         cart, setCart
     }

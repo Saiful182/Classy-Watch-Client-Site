@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Row } from 'react-bootstrap';
+import { Button, Row, Spinner } from 'react-bootstrap';
 import useProducts from '../../../../hooks/useProducts';
 import Product from '../Product/Product';
 import './homeproduct.css';
@@ -14,13 +14,15 @@ const HomeProduct = () => {
 
     return (
         <div className="product-container">
+            {
+                products.length <= 0 ? < Spinner style={{ "margin": "0px auto" }} animation="border" variant="dark" /> : <Row xs={1} md={2} lg={3} className="g-4">
 
-            <Row xs={1} md={2} lg={3} className="g-4">
+                    {
+                        filtredProducts.map(products => <Product products={products} key={products._id}></Product>)
+                    }
+                </Row>
+            }
 
-                {
-                    filtredProducts.map(products => <Product products={products} key={products._id}></Product>)
-                }
-            </Row>
             <div className="link-button">
                 <Link to="/products"> See More</Link>
             </div>

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import { NavDropdown, Offcanvas } from 'react-bootstrap';
+import { Offcanvas } from 'react-bootstrap';
 import './HeaderSideBar.css'
-import {
-    Link
-} from "react-router-dom";
 import '../header.css';
 import { FaList } from "react-icons/fa";
 import useAuth from '../../hooks/useAuth';
@@ -32,7 +29,8 @@ const HeaderSideBar = () => {
                         user.email ? <Offcanvas.Body>
 
                             {
-                                admin?.email === user?.email ? < AdminPanel ></AdminPanel> : <UserPanel></UserPanel>
+                                admin?.email === user?.email ? <AdminPanel></AdminPanel>
+                                    : <UserPanel></UserPanel>
                             }
 
                         </Offcanvas.Body> : <Offcanvas.Body>

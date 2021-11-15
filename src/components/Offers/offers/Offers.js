@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import image from '../../../images/Banner/offers.jpg'
 import useProducts from '../../hooks/useProducts';
 
@@ -15,29 +15,34 @@ const Offers = () => {
     console.log(fristFive)
     return (
         <div>
-            <div >
+            {
+                products.length <= 0 ? < Spinner style={{ "textAlign": "center" }} animation="border" variant="dark" /> : <div>
+                    <div >
 
-                <img style={{ "width": "100%" }} src={image} alt="" />
+                        <img style={{ "width": "100%" }} src={image} alt="" />
 
 
-            </div>
-            <div className="offers-containers">
-                <h2> Get 40% off On this Products</h2>
-                <Row sm={1} md={2} lg={3} className="g-4" >
-                    {
-                        fristFive.map(frist => <OfferFrist frist={frist} key={frist._id}></OfferFrist>)
-                    }
-                </Row>
-            </div>
-            <div className="offers-containers">
-                <h2> Get 30% off On this Products</h2>
-                <Row sm={1} md={2} lg={3} className="g-4">
-                    {
-                        secondFive.map(second => <OfferSecond second={second} key={second._id}></OfferSecond>)
-                    }
-                </Row>
+                    </div>
+                    <div className="offers-containers">
+                        <h2> Get 40% off On this Products</h2>
+                        <Row sm={1} md={2} lg={3} className="g-4" >
+                            {
+                                fristFive.map(frist => <OfferFrist frist={frist} key={frist._id}></OfferFrist>)
+                            }
+                        </Row>
+                    </div>
+                    <div className="offers-containers">
+                        <h2> Get 30% off On this Products</h2>
+                        <Row sm={1} md={2} lg={3} className="g-4">
+                            {
+                                secondFive.map(second => <OfferSecond second={second} key={second._id}></OfferSecond>)
+                            }
+                        </Row>
 
-            </div>
+                    </div>
+                </div>
+            }
+
 
         </div>
     );
