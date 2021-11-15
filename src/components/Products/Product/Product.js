@@ -17,7 +17,7 @@ const Product = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const onSubmit = (cart) => {
-        axios.post('http://localhost:5000/carts', cart)
+        axios.post('https://radiant-temple-68689.herokuapp.com/carts', cart)
             .then(res => {
                 if (res.data?.insertedId) {
                     reset();
@@ -32,7 +32,7 @@ const Product = () => {
     const { Id } = useParams()
     const [product, setProduct] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${Id}`)
+        fetch(`https://radiant-temple-68689.herokuapp.com/products/${Id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

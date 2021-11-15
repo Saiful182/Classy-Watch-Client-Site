@@ -9,7 +9,7 @@ const User = (props) => {
     const handleAdmin = (id) => {
         const selectedUser = users.filter(user => user._id === id)
         console.log(selectedUser);
-        axios.put(`http://localhost:5000/users/${id}`, selectedUser)
+        axios.put(`https://radiant-temple-68689.herokuapp.com/users/${id}`, selectedUser)
             .then(res => {
                 if (res.data?.acknowledged === true) {
                     alert(`${displayName} now an Admin`);

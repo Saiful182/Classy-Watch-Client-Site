@@ -9,7 +9,7 @@ const ManageProduct = (props) => {
     const handeleDelete = id => {
         const procced = window.confirm('are you really want to Delete this product?');
         if (procced) {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://radiant-temple-68689.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

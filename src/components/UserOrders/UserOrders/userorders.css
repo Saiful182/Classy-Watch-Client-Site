@@ -4,3 +4,17 @@
 .card-text{
     color:black;
 }
+.cart-item{
+    text-align: end;
+   margin-right: 40px;
+  
+}
+.payment-form{
+    text-align: center;
+}
+hr {
+    height: 2px !important;
+   background-color: black !important;
+   opacity: 1;
+    
+}

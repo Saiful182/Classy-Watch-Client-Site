@@ -8,7 +8,7 @@ const AddNewProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://radiant-temple-68689.herokuapp.com/products', data)
             .then(res => {
                 if (res.data?.insertedId) {
                     alert('Watch Added to Your Cart');

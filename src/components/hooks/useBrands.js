@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useBrands = () => {
     const [brands, setBrands] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/brands')
+        fetch('https://radiant-temple-68689.herokuapp.com/brands')
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])

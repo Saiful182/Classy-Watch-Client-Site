@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './pay.css';
 const Pay = () => {
     return (
-        <div>
-            <h2>This is paying site</h2>
+        <div className="payment-container">
+            <h2 >Developer Is Sleeping.This Page will be updated Soon....</h2>
         </div>
     );
 };

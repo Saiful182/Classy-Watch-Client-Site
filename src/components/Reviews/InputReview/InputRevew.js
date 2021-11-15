@@ -7,7 +7,7 @@ const InputRevew = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = review => {
         console.log(review);
-        axios.post('http://localhost:5000/reviews', review)
+        axios.post('https://radiant-temple-68689.herokuapp.com/reviews', review)
             .then(res => {
                 if (res.data?.insertedId) {
 

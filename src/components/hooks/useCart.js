@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 const useCart = () => {
     const [cart, setCart] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/carts')
+        fetch('https://radiant-temple-68689.herokuapp.com/carts')
             .then(res => res.json())
             .then(data => setCart(data))
-    }, [cart])
+    }, [setCart])
     return {
         cart, setCart
     }

@@ -9,7 +9,7 @@ const ManageAllOrder = (props) => {
     const handelApproveIteam = id => {
         const procced = window.confirm('are you really want to approve this Order?');
         const approvedPakage = cart.filter(pakage => pakage._id === id)
-        const url = `http://localhost:5000/carts/${id}`;
+        const url = `https://radiant-temple-68689.herokuapp.com/carts/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -27,7 +27,7 @@ const ManageAllOrder = (props) => {
     const handelRemoveiteam = _id => {
         const procced = window.confirm('are you really want to cancel this Order?');
         if (procced) {
-            const url = `http://localhost:5000/carts/${_id}`;
+            const url = `https://radiant-temple-68689.herokuapp.com/carts/${_id}`;
             fetch(url, {
                 method: 'DELETE'
             })
