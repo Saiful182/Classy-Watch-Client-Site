@@ -12,6 +12,9 @@
     margin: 0 auto!important;
     
 }
+.card p{
+    color: black !important;
+}
 .card-title {
     color:black !important;
 }

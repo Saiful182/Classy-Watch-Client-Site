@@ -6,7 +6,7 @@ import Login from './components/Login/Login/Login';
 import Notfound from './components/NotFound/Notfound';
 import Pay from './components/Pay/Pay';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Product from './components/Products/Product/Product';
+
 import ProductsContainer from './components/Products/ProductsContainer/ProductsContainer';
 import Registration from './components/Registration/Registration/Registration';
 import Reviews from './components/Reviews/Reviews/Reviews';
@@ -14,13 +14,13 @@ import Home from './components/Shared/Home/Home/Home';
 import UserOrders from './components/UserOrders/UserOrders/UserOrders';
 import AuthProvider from './context/AuthProvider';
 import Users from './components/AdminPanel/Users/Users/Users'
-
 import AddNewProduct from './components/AdminPanel/AddNewProduct/AddNewProduct/AddNewProduct';
 import ManageAllOrders from './components/AdminPanel/ManageAllorders/ManageAllOrders/ManageAllOrders';
 
 import ManageProducts from './components/AdminPanel/ManageProducts/ManageProducts/ManageProducts';
 import FooterContainer from './components/Footer/FooterContainer/FooterContainer';
 import Offers from './components/Offers/offers/Offers';
+import Product from './components/Products/Product/Product';
 
 function App() {
   return (
@@ -33,10 +33,10 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
-            <Route exact path="/home">
+            <Route path="/home">
               <Home></Home>
             </Route>
-            <Route exact path="/products">
+            <Route path="/products">
               <ProductsContainer></ProductsContainer>
             </Route>
             <Route path="/login">
@@ -63,7 +63,7 @@ function App() {
             <PrivateRoute path="/userorders">
               <UserOrders></UserOrders>
             </PrivateRoute>
-            <PrivateRoute path="/products/:Id">
+            <PrivateRoute exact path="/product/:Id">
               <Product></Product>
             </PrivateRoute>
             <PrivateRoute path="/pay">

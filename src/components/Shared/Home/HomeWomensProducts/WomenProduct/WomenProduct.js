@@ -26,7 +26,7 @@ const WomenProduct = (props) => {
                     </Card.Body>
                     {
 
-                        user.email ? <Button as={Link} to={`/products/${_id}`} variant="primary">
+                        user.email ? <Button as={Link} to={`/product/${_id}`} variant="primary">
                             Buy Now
                         </Button> : <Button as={Link} to='/login' variant="primary" >
                             Buy Now

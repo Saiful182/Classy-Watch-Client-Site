@@ -28,8 +28,9 @@ const Product = () => {
                 }
             })
     }
-    const [rating, setRating] = useState(0)
-    const { Id } = useParams()
+    const [rating, setRating] = useState(0);
+    const { Id } = useParams();
+    console.log(Id);
     const [product, setProduct] = useState({});
     useEffect(() => {
         fetch(`https://radiant-temple-68689.herokuapp.com/products/${Id}`)

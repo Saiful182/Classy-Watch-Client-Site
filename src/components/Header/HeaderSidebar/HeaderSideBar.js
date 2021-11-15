@@ -18,7 +18,6 @@ const HeaderSideBar = () => {
     const { users } = useUser();
     const { user } = useAuth();
     const admin = users.find(admin => admin.role === 'Admin');
-    console.log(admin);
     return (
         <>
             <>
